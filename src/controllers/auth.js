@@ -35,7 +35,7 @@ export async function login(req, res){
         //await db-query(`DELET FROM sessions WHERE user-id = $1`, [id]);
         //await db.query(`INSERT INTO sessions (token, user-id, "createdAt") VALUES ($1, $2, NOW())`, [token, id])
 
-        res.status(201).send(token);
+        res.status(200).send(token);
     }catch(err){
         return res.status(500).send(err.message);
     }

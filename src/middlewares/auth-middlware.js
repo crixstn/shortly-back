@@ -9,7 +9,7 @@ export async function validateSignUp(req, res, next){
         const validation = signUpSchema.validate( req.body, {abortEarly: false});
         if(validation.error){
             const err = validation.error.details.map((detail) => detail.message);
-            return res.status(400).send(err)
+            return res.status(422).send(err)
         }
 
     }catch(err){
@@ -28,7 +28,7 @@ export async function validateLogin(req, res, next){
         const validation = loginSchema.validate(req.body, {abortEarly: false})
         if(validation.error){
             const err = validation.error.details.map((detail) => detail.message);
-            return res.status(400).send(err)
+            return res.status(422).send(err)
         }
         
     }catch(err){
