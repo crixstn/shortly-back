@@ -152,8 +152,8 @@ INSERT INTO public.sessions VALUES (15, 'c1086423-5f51-478b-b8b9-95f8ed6635cf', 
 -- Data for Name: urls; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.urls VALUES (1, 2, 'https://www.notion.so/bootcampra/Projeto-17-Shortly-API-c306c707e7504d32a689e0ff6dffb8e3', 'lxwVJrd9c410gPyOtX9gN', '2023-03-01 21:51:39.58922', 0);
-INSERT INTO public.urls VALUES (2, 2, 'https://www.notion.so/bootcampra/Projeto-17-Shortly-API-c306c707e7504d32a689e0ff6dffb8e3', 'MRzkraNp1goRY0qR4h7pz', '2023-03-01 21:57:57.511874', 0);
+INSERT INTO public.urls VALUES (1, 2, 'https://www.notion.so/bootcampra/Projeto-17-Shortly-API-c306c707e7504d32a689e0ff6dffb8e3', 'lxwVJrd9c410gPyOtX9gN', '2023-03-01 21:51:39.58922', 5);
+INSERT INTO public.urls VALUES (2, 2, 'https://www.notion.so/bootcampra/Projeto-17-Shortly-API-c306c707e7504d32a689e0ff6dffb8e3', 'MRzkraNp1goRY0qR4h7pz', '2023-03-01 21:57:57.511874', 1);
 
 
 --
