@@ -13,7 +13,7 @@ export async function signUp(req, res){
         const passwordHashed = bcrypt.hashSync(password,10)
         
         await db.query(`INSERT INTO users (name, email, password, "createdAt") VALUES ($1, $2, $3, NOW())`, [name, email, passwordHashed]);
-        res.status(201).send("deubom")
+        res.sendStatus(201);
     }catch(err){
         return res.status(500).send(err.message);
     }
@@ -32,10 +32,10 @@ export async function login(req, res){
         const token = uuidV4();
         const id = userExists.rows[0].id;
 
-        //await db-query(`DELET FROM sessions WHERE user-id = $1`, [id]);
-        //await db.query(`INSERT INTO sessions (token, user-id, "createdAt") VALUES ($1, $2, NOW())`, [token, id])
+        await db.query(`DELETE FROM sessions WHERE user_id = $1`, [id]);
+        await db.query(`INSERT INTO sessions (token, user_id, "createdAt") VALUES ($1, $2, NOW())`, [token, id])
 
-        res.status(200).send(token);
+        res.status(200).send({token});
     }catch(err){
         return res.status(500).send(err.message);
     }
