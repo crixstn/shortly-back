@@ -44,9 +44,28 @@ export async function openUrl(req, res){
         const count = (views.rows[0].visitCount)+1;
         await db.query(`UPDATE urls SET "visitCount"=$1 WHERE "shortUrl" = $2`, [count, shortUrl]);
 
-        res.redirect(url.rows[0].url)
+        res.redirect(url.rows[0].url);
     }catch(err){
         return res.status(500).send(err.message);
     }
 }
 
+export async function deleteUrl(req, res){
+    const {id} = req.params;
+    const token = (req.headers.authorization).replace('Bearer ', '');
+
+    try{
+        const userId = await db.query(`SELECT "user_id" FROM sessions WHERE token = $1`, [token]);
+        if(!userId.rows[0] || !token) return res.sendStatus(401);    
+
+        const shortUrl = await db.query(`SELECT * FROM urls WHERE id = $1`, [id]);
+        if(!shortUrl.rows[0]) return res.sendStatus(404);
+
+        if(userId.rows[0].user_id !== shortUrl.rows[0].user_id) return res.sendStatus(401);
+        await db.query(`DELETE FROM urls WHERE id = $1`, [id]);
+
+        return res.sendStatus(204);
+    }catch(err){
+        return res.status(500).send(err.message);
+    }
+}

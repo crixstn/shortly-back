@@ -145,7 +145,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 --
 
 INSERT INTO public.sessions VALUES (3, 'f4e59200-1f7b-48d6-bb61-acda15a6e248', 1, '2023-02-28 11:17:08.398162');
-INSERT INTO public.sessions VALUES (16, '4166de53-5725-4863-b1cc-39c2da874adb', 2, '2023-03-02 11:26:36.874248');
+INSERT INTO public.sessions VALUES (17, 'f9906745-a520-4af6-bb3a-a4f1b2c905c0', 2, '2023-03-02 12:01:20.426647');
 
 
 --
@@ -153,7 +153,6 @@ INSERT INTO public.sessions VALUES (16, '4166de53-5725-4863-b1cc-39c2da874adb', 
 --
 
 INSERT INTO public.urls VALUES (1, 2, 'https://www.notion.so/bootcampra/Projeto-17-Shortly-API-c306c707e7504d32a689e0ff6dffb8e3', 'lxwVJrd9c410gPyOtX9gN', '2023-03-01 21:51:39.58922', 5);
-INSERT INTO public.urls VALUES (2, 2, 'https://www.notion.so/bootcampra/Projeto-17-Shortly-API-c306c707e7504d32a689e0ff6dffb8e3', 'MRzkraNp1goRY0qR4h7pz', '2023-03-01 21:57:57.511874', 6);
 INSERT INTO public.urls VALUES (3, 2, 'https://hub.driven.com.br', 'j8EU2pAOfKCpFrhjXsv7R', '2023-03-02 11:28:16.181297', 1);
 
 
@@ -169,7 +168,7 @@ INSERT INTO public.users VALUES (2, 'cris', 'cris@driven.com.br', '$2b$10$Ere8i2
 -- Name: sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.sessions_id_seq', 16, true);
+SELECT pg_catalog.setval('public.sessions_id_seq', 17, true);
 
 
 --
