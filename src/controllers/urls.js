@@ -26,13 +26,26 @@ export async function getUrlbyId(req, res){
     try{
         const url = await db.query(`SELECT id, "shortUrl", "url" FROM urls WHERE id = $1`, [id]);
         if(!url.rows[0]) return res.sendStatus(404);
-        
-        const views = await db.query(`SELECT "visitCount" FROM urls WHERE id = $1`, [id]);
-        const count = (views.rows[0].visitCount)+1;
-        await db.query(`UPDATE urls SET "visitCount"=$1 WHERE id = $2`, [count, id]);
 
         res.send(url.rows[0])
     } catch(err){
+        return res.status(500).send(err.message);
+    }
+}
+
+export async function openUrl(req, res){
+    const {shortUrl} = req.params;
+
+    try{
+        const url = await db.query(`SELECT url FROM urls WHERE "shortUrl" = $1`, [shortUrl]);
+        if(!url.rows[0]) return res.sendStatus(404);
+
+        const views = await db.query(`SELECT "visitCount" FROM urls WHERE "shortUrl" = $1`, [shortUrl]);
+        const count = (views.rows[0].visitCount)+1;
+        await db.query(`UPDATE urls SET "visitCount"=$1 WHERE "shortUrl" = $2`, [count, shortUrl]);
+
+        res.redirect(url.rows[0].url)
+    }catch(err){
         return res.status(500).send(err.message);
     }
 }
