@@ -95,8 +95,7 @@ CREATE TABLE public.users (
     name character varying(50) NOT NULL,
     email character varying(250) NOT NULL,
     password text NOT NULL,
-    "createdAt" timestamp without time zone DEFAULT now() NOT NULL,
-    "visitCount" integer NOT NULL
+    "createdAt" timestamp without time zone DEFAULT now() NOT NULL
 );
 
 
@@ -145,8 +144,8 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 -- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.sessions VALUES (18, 'de1610d3-1a58-4142-bb3b-8805cde20f26', 3, '2023-03-02 20:53:10.38759');
 INSERT INTO public.sessions VALUES (19, 'a84ae25f-e211-4460-ad5e-a3a6ca6f2f3c', 4, '2023-03-02 22:55:53.668296');
+INSERT INTO public.sessions VALUES (22, '38aabfac-203b-453d-a750-e503085d3243', 3, '2023-03-03 08:33:11.167785');
 
 
 --
@@ -154,29 +153,30 @@ INSERT INTO public.sessions VALUES (19, 'a84ae25f-e211-4460-ad5e-a3a6ca6f2f3c', 
 --
 
 INSERT INTO public.urls VALUES (4, 3, 'https://hub.driven.com.br', 'we2hU8MgtsAkcEpD54_7k', '2023-03-02 20:53:24.907813', 2);
-INSERT INTO public.urls VALUES (5, 4, 'https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2021/02/nyan-cat-1.gif', 'vbtMbHjCPQxzJ2XV_GLd8', '2023-03-02 22:57:31.582739', 5);
+INSERT INTO public.urls VALUES (5, 4, 'https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2021/02/nyan-cat-1.gif', 'vbtMbHjCPQxzJ2XV_GLd8', '2023-03-02 22:57:31.582739', 11);
+INSERT INTO public.urls VALUES (6, 3, 'https://media.tenor.com/aSHpk8P5nwoAAAAC/sad-jon-snow.gif', 'mVgCW7iEKS6DUmdl8T54A', '2023-03-03 07:57:10.604711', 5);
 
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-INSERT INTO public.users VALUES (3, 'cris', 'cris@driven.com.br', '$2b$10$Kn2WCeVyQTZPb6tKs9Wek.o6Vi/2Rz3EJZAFhDyUqm/zt1EDh/Wrq', '2023-03-02 20:53:06.447326', 0);
-INSERT INTO public.users VALUES (4, 'João', 'joao@driven.com.br', '$2b$10$9dBpB1O4T4dnhpAWr9YazeRYgX0rxoFn5E7rzNlY.xCZG.fnF2HWC', '2023-03-02 22:55:35.121125', 0);
+INSERT INTO public.users VALUES (3, 'cris', 'cris@driven.com.br', '$2b$10$Kn2WCeVyQTZPb6tKs9Wek.o6Vi/2Rz3EJZAFhDyUqm/zt1EDh/Wrq', '2023-03-02 20:53:06.447326');
+INSERT INTO public.users VALUES (4, 'João', 'joao@driven.com.br', '$2b$10$9dBpB1O4T4dnhpAWr9YazeRYgX0rxoFn5E7rzNlY.xCZG.fnF2HWC', '2023-03-02 22:55:35.121125');
 
 
 --
 -- Name: sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.sessions_id_seq', 19, true);
+SELECT pg_catalog.setval('public.sessions_id_seq', 22, true);
 
 
 --
 -- Name: urls_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.urls_id_seq', 5, true);
+SELECT pg_catalog.setval('public.urls_id_seq', 6, true);
 
 
 --

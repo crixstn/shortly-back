@@ -1,22 +1,9 @@
-import { Router } from "express";
-import { signUp, login } from "../controllers/auth.js";
-import { postUrl, getUrlbyId, openUrl, deleteUrl } from "../controllers/urls.js";
-import { getUser, rankingUsers } from "../controllers/users.js";
-import validateSchemas from "../middlewares/schemas-middlware.js";
-import { signUpSchema, loginSchema } from "../schemas/auth-schema.js";
-import { urlSchema } from "../schemas/url-schema.js"
+import authRouter from "./auth-router.js";
+import urlRouter from "./urls-router.js";
+import userRouter from "./user-router.js";
 
-const router = Router();
+function routers(app){
+    app.use([authRouter, urlRouter, userRouter]);
+}
 
-router.post("/signup", validateSchemas(signUpSchema), signUp);
-router.post("/signin", validateSchemas(loginSchema), login);
-
-router.get("/urls/:id", getUrlbyId);
-router.get("/urls/open/:shortUrl", openUrl);
-router.post("/urls/shorten", validateSchemas(urlSchema), postUrl);
-router.delete("/urls/:id", deleteUrl);
-
-router.get("/users/me", getUser);
-router.get("/ranking", rankingUsers);
-
-export default router;
+export default routers;
