@@ -146,6 +146,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 --
 
 INSERT INTO public.sessions VALUES (18, 'de1610d3-1a58-4142-bb3b-8805cde20f26', 3, '2023-03-02 20:53:10.38759');
+INSERT INTO public.sessions VALUES (19, 'a84ae25f-e211-4460-ad5e-a3a6ca6f2f3c', 4, '2023-03-02 22:55:53.668296');
 
 
 --
@@ -153,6 +154,7 @@ INSERT INTO public.sessions VALUES (18, 'de1610d3-1a58-4142-bb3b-8805cde20f26', 
 --
 
 INSERT INTO public.urls VALUES (4, 3, 'https://hub.driven.com.br', 'we2hU8MgtsAkcEpD54_7k', '2023-03-02 20:53:24.907813', 2);
+INSERT INTO public.urls VALUES (5, 4, 'https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2021/02/nyan-cat-1.gif', 'vbtMbHjCPQxzJ2XV_GLd8', '2023-03-02 22:57:31.582739', 5);
 
 
 --
@@ -160,27 +162,28 @@ INSERT INTO public.urls VALUES (4, 3, 'https://hub.driven.com.br', 'we2hU8MgtsAk
 --
 
 INSERT INTO public.users VALUES (3, 'cris', 'cris@driven.com.br', '$2b$10$Kn2WCeVyQTZPb6tKs9Wek.o6Vi/2Rz3EJZAFhDyUqm/zt1EDh/Wrq', '2023-03-02 20:53:06.447326', 0);
+INSERT INTO public.users VALUES (4, 'João', 'joao@driven.com.br', '$2b$10$9dBpB1O4T4dnhpAWr9YazeRYgX0rxoFn5E7rzNlY.xCZG.fnF2HWC', '2023-03-02 22:55:35.121125', 0);
 
 
 --
 -- Name: sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.sessions_id_seq', 18, true);
+SELECT pg_catalog.setval('public.sessions_id_seq', 19, true);
 
 
 --
 -- Name: urls_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.urls_id_seq', 4, true);
+SELECT pg_catalog.setval('public.urls_id_seq', 5, true);
 
 
 --
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 3, true);
+SELECT pg_catalog.setval('public.users_id_seq', 4, true);
 
 
 --
